@@ -129,6 +129,10 @@
     <ClInclude Include="RioluEngine\include\ECS\Component.h" />
     <ClInclude Include="RioluEngine\include\ECS\Entity.h" />
     <ClInclude Include="RioluEngine\include\ECS\Transform.h" />
+    <ClInclude Include="RioluEngine\include\Memory\TSharedPointer.h" />
+    <ClInclude Include="RioluEngine\include\Memory\TStaticPtr.h" />
+    <ClInclude Include="RioluEngine\include\Memory\TUniquePtr.h" />
+    <ClInclude Include="RioluEngine\include\Memory\TWeakPointer.h" />
     <ClInclude Include="RioluEngine\include\Prerequisites.h" />
     <ClInclude Include="RioluEngine\include\Window.h" />
   </ItemGroup>
