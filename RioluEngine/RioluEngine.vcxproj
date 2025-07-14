@@ -134,10 +134,17 @@
     <ClInclude Include="RioluEngine\include\Memory\TUniquePtr.h" />
     <ClInclude Include="RioluEngine\include\Memory\TWeakPointer.h" />
     <ClInclude Include="RioluEngine\include\Prerequisites.h" />
+    <ClInclude Include="RioluEngine\include\Utilities\Vector2.h" />
     <ClInclude Include="RioluEngine\include\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RioluEngine\include\ECS\Transform.cpp" />
+    <ClCompile Include="RioluEngine\src\BaseApp.cpp" />
+    <ClCompile Include="RioluEngine\src\CShape.cpp" />
+    <ClCompile Include="RioluEngine\src\ECS\Actor.cpp" />
+    <ClCompile Include="RioluEngine\src\main.cpp" />
+    <ClCompile Include="RioluEngine\src\Transform.cpp" />
+    <ClCompile Include="RioluEngine\src\Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
