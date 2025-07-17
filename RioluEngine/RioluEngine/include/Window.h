@@ -1,85 +1,76 @@
-#pragma once
-#include "Prerequisites.h"
-#include "Memory/TSharedPointer.h"
-#include "Memory/TUniquePtr.h"
+﻿#pragma once
 
 /**
- * @file Window.h
- * @brief Declares the Window class, a wrapper for managing an SFML window.
+ * @file BaseApp.h
+ * @brief Defines the BaseApp class, which manages the main application loop and rendering.
  */
 
+#include "Prerequisites.h"
+#include <Window.h>
+#include "CShape.h" // Agregado para que coincida con el c�digo del profesor
+#include "ECS/Actor.h"
+
+#include <vector>
+
  /**
-  * @class Window
-  * @brief Encapsulates an SFML window, handling initialization, events, rendering, and cleanup.
+  * @class BaseApp
+  * @brief Core application class that controls initialization, the main loop, rendering, and cleanup.
   */
-class Window {
+class
+	BaseApp {
 public:
-    /**
-     * @brief Default constructor.
-     *
-     * Does not create a window. Use only if you plan to initialize the window later.
-     */
-    Window() = default;
+	/**
+	 * @brief Default constructor.
+	 */
+	BaseApp() = default;
 
-    /**
-     * @brief Constructs and initializes a new window.
-     *
-     * @param width  Width of the window in pixels.
-     * @param height Height of the window in pixels.
-     * @param title  Title of the window.
-     */
-    Window(int width, int height, const std::string& title);
+	/**
+	 * @brief Destructor that handles cleanup.
+	 */
+	~BaseApp();
 
-    /**
-     * @brief Destructor. Releases allocated resources.
-     */
-    ~Window();
+	/**
+	 * @brief Runs the application.
+	 *
+	 * This method initializes the application, enters the main loop, and calls update/render methods.
+	 * @return Exit code of the application.
+	 */
+	int
+		run();
 
-    /**
-     * @brief Handles window events (e.g., close, user input).
-     *
-     * Processes all pending SFML events in the event queue.
-     */
-    void handleEvents();
+	/**
+	 * @brief Initializes the application window and objects.
+	 * @return True if initialization was successful, false otherwise.
+	 */
+	bool
+		init();
 
-    /**
-     * @brief Checks if the window is currently open.
-     *
-     * @return true if the window is open, false otherwise.
-     */
-    bool isOpen() const;
+	/**
+	 * @brief Updates the application logic (called every frame).
+	 */
+	void
+		update();
 
-    /**
-     * @brief Clears the window with a specified color.
-     *
-     * @param color The color used to clear the screen. Default is black.
-     */
-    void clear(const sf::Color& color = sf::Color(0, 0, 0, 255));
+	/**
+	 * @brief Renders all drawable objects to the screen.
+	 */
+	void
+		render();
 
-    /**
-     * @brief Draws a drawable object to the window.
-     *
-     * @param drawable Drawable object (shape, sprite, text, etc.).
-     * @param states   Optional render states. Defaults to sf::RenderStates::Default.
-     */
-    void draw(const sf::Drawable& drawable,
-        const sf::RenderStates& states = sf::RenderStates::Default);
-
-    /**
-     * @brief Displays the contents of the window.
-     *
-     * Should be called after drawing all objects for the current frame.
-     */
-    void display();
-
-    /**
-     * @brief Releases the window resources.
-     *
-     * Properly deletes the internal SFML window pointer.
-     */
-    void destroy();
+	/**
+	 * @brief Releases all allocated resources and cleans up.
+	 */
+	void
+		destroy();
 
 private:
-    EngineUtilities::TUniquePtr<sf::RenderWindow> m_windowPtr; ///< Unique pointer to the SFML render window.
-    sf::View m_view;                                           ///< View used for rendering (not exposed currently).
+	EngineUtilities::TSharedPointer<Window> m_windowPtr;   ///< Pointer to custom Window class using smart pointer.
+	EngineUtilities::TSharedPointer<CShape> m_shapePtr;    ///< Pointer to custom shape class using smart pointer.
+	EngineUtilities::TSharedPointer<Actor> m_ACircle;
+
+
+
+
+	std::vector<sf::Vector2f> m_waypoints; ///< Lista de posiciones a seguir por el actor.
+	int m_currentWaypointIndex = 0;        ///< �ndice del waypoint actual.
 };

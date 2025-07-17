@@ -45,4 +45,4 @@ Actor::render(const EngineUtilities::TSharedPointer<Window>& window) {
             shape->render(window);
         }
     }
-}
+}w
