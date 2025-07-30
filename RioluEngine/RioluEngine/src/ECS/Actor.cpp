@@ -1,4 +1,5 @@
 ﻿#include "ECS/Actor.h"
+#include "ECS/Texture.h"
 
 Actor::Actor(const std::string& actorName) {
     //Setup Actor Name
@@ -45,4 +46,15 @@ Actor::render(const EngineUtilities::TSharedPointer<Window>& window) {
             shape->render(window);
         }
     }
-}w
+}
+
+void
+Actor::setTexture(const EngineUtilities::TSharedPointer<Texture>& texture) {
+    auto shape = getComponent<CShape>();
+    if (shape) {
+        if (!texture.isNull()) {
+            shape->setTexture(texture);
+            addComponent(texture);
+        }
+    }
+}

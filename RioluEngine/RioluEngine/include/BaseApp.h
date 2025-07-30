@@ -1,66 +1,76 @@
-#pragma once
+﻿#pragma once
 
 /**
  * @file BaseApp.h
- * @brief Defines the BaseApp class which manages the main application loop and rendering.
+ * @brief Defines the BaseApp class, which manages the main application loop and rendering.
  */
 
 #include "Prerequisites.h"
 #include <Window.h>
-#include "CShape.h"  ///< Included to match the instructor's code
+#include "CShape.h" // Agregado para que coincida con el c�digo del profesor
 #include "ECS/Actor.h"
+
+#include <vector>
 
  /**
   * @class BaseApp
-  * @brief Main application class that controls initialization, main loop,
-  * rendering, and resource cleanup.
+  * @brief Core application class that controls initialization, the main loop, rendering, and cleanup.
   */
-class BaseApp {
+class
+	BaseApp {
 public:
-    /**
-     * @brief Default constructor.
-     */
-    BaseApp() = default;
+	/**
+	 * @brief Default constructor.
+	 */
+	BaseApp() = default;
 
-    /**
-     * @brief Destructor that releases allocated resources.
-     */
-    ~BaseApp();
+	/**
+	 * @brief Destructor that handles cleanup.
+	 */
+	~BaseApp();
 
-    /**
-     * @brief Runs the application.
-     *
-     * Initializes the application, enters the main loop,
-     * and calls update and render methods.
-     *
-     * @return Exit code of the application.
-     */
-    int run();
+	/**
+	 * @brief Runs the application.
+	 *
+	 * This method initializes the application, enters the main loop, and calls update/render methods.
+	 * @return Exit code of the application.
+	 */
+	int
+		run();
 
-    /**
-     * @brief Initializes the window and application objects.
-     *
-     * @return true if initialization succeeds, false otherwise.
-     */
-    bool init();
+	/**
+	 * @brief Initializes the application window and objects.
+	 * @return True if initialization was successful, false otherwise.
+	 */
+	bool
+		init();
 
-    /**
-     * @brief Updates the application logic (called every frame).
-     */
-    void update();
+	/**
+	 * @brief Updates the application logic (called every frame).
+	 */
+	void
+		update();
 
-    /**
-     * @brief Renders all drawable objects on the screen.
-     */
-    void render();
+	/**
+	 * @brief Renders all drawable objects to the screen.
+	 */
+	void
+		render();
 
-    /**
-     * @brief Releases all allocated resources and performs cleanup.
-     */
-    void destroy();
+	/**
+	 * @brief Releases all allocated resources and cleans up.
+	 */
+	void
+		destroy();
 
 private:
-    EngineUtilities::TSharedPointer<Window> m_windowPtr; ///< Pointer to the main window (Window class).
-    EngineUtilities::TSharedPointer<CShape> m_shapePtr;  ///< Pointer to the shape component (CShape).
-    EngineUtilities::TSharedPointer<Actor>  m_ACircle;   ///< Actor representing a circular shape.
+	EngineUtilities::TSharedPointer<Window> m_windowPtr;   ///< Pointer to custom Window class using smart pointer.
+	EngineUtilities::TSharedPointer<CShape> m_shapePtr;    ///< Pointer to custom shape class using smart pointer.
+	EngineUtilities::TSharedPointer<Actor> m_ACircle;
+	EngineUtilities::TSharedPointer<Actor> m_Track;
+
+	std::vector<sf::Vector2f> m_waypoints; ///< Lista de posiciones a seguir por el actor.
+	int m_currentWaypointIndex = 0;        ///< �ndice del waypoint actual.
+
+	std::vector<EngineUtilities::TSharedPointer<CShape>> m_waypointMarkers;
 };

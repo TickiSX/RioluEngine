@@ -128,12 +128,14 @@
     <ClInclude Include="RioluEngine\include\ECS\Actor.h" />
     <ClInclude Include="RioluEngine\include\ECS\Component.h" />
     <ClInclude Include="RioluEngine\include\ECS\Entity.h" />
+    <ClInclude Include="RioluEngine\include\ECS\Texture.h" />
     <ClInclude Include="RioluEngine\include\ECS\Transform.h" />
     <ClInclude Include="RioluEngine\include\Memory\TSharedPointer.h" />
     <ClInclude Include="RioluEngine\include\Memory\TStaticPtr.h" />
     <ClInclude Include="RioluEngine\include\Memory\TUniquePtr.h" />
     <ClInclude Include="RioluEngine\include\Memory\TWeakPointer.h" />
     <ClInclude Include="RioluEngine\include\Prerequisites.h" />
+    <ClInclude Include="RioluEngine\include\ResourceManager.h" />
     <ClInclude Include="RioluEngine\include\Utilities\Vector2.h" />
     <ClInclude Include="RioluEngine\include\Window.h" />
   </ItemGroup>
@@ -143,6 +145,7 @@
     <ClCompile Include="RioluEngine\src\CShape.cpp" />
     <ClCompile Include="RioluEngine\src\ECS\Actor.cpp" />
     <ClCompile Include="RioluEngine\src\main.cpp" />
+    <ClCompile Include="RioluEngine\src\ResourceManager.cpp" />
     <ClCompile Include="RioluEngine\src\Transform.cpp" />
     <ClCompile Include="RioluEngine\src\Window.cpp" />
   </ItemGroup>

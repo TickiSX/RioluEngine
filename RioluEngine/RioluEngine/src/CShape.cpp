@@ -2,6 +2,7 @@
 #include "Window.h"
 #include "Memory/TUniquePtr.h"
 #include <Memory/TSharedPointer.h>
+#include "ECS/Texture.h"
 /**
  * @file CShape.cpp
  * @brief Implementation of the CShape class for creating and manipulating different SFML shapes.
@@ -106,7 +107,7 @@ CShape::render(const EngineUtilities::TSharedPointer<Window>& window) {
 void
 CShape::setPosition(float x, float y) {
     if (m_shapePtr) {
-        m_shapePtr->setPosition(x, y);
+        m_shapePtr->setPosition({ x, y });
     }
     else {
         ERROR("CShape", "setPosition", "Shape is not initialized.");
@@ -152,7 +153,7 @@ void
 CShape::setRotation(float angle)
 {
     if (m_shapePtr) {
-        m_shapePtr->setRotation(angle);
+        m_shapePtr->setRotation(sf::degrees(angle));
     }
     else {
         ERROR("CShape", "setRotation", "Shape is not initialized.");
@@ -173,6 +174,15 @@ CShape::setScale(const sf::Vector2f& scale) {
         ERROR("CShape", "setScale", "Shape is not initialized.");
     }
 }
+
+void
+CShape::setTexture(const EngineUtilities::TSharedPointer<Texture>& texture) {
+    if (!texture.isNull()) {
+        m_shapePtr->setTexture(&texture->getTexture());
+    }
+}
+
+
 
 sf::Shape* CShape::getShape()
 {

@@ -6,24 +6,27 @@
  */
 
  // === Standard Libraries ===
-#include <iostream>      ///< Input/output stream.
-#include <string>        ///< std::string handling.
-#include <sstream>       ///< String stream for constructing messages.
-#include <vector>        ///< Dynamic array container.
-#include <thread>        ///< Multi-threading support.
-#include <map>           ///< Sorted associative container.
-#include <fstream>       ///< File input/output.
-#include <unordered_map> ///< Hash table-based associative container.
+#include <iostream>     ///< Input/output stream.
+#include <string>       ///< std::string handling.
+#include <sstream>      ///< String stream for constructing messages.
+#include <vector>       ///< Dynamic array container.
+#include <thread>       ///< Multi-threading support.
+#include <map>          ///< Sorted associative container.
+#include <fstream>      ///< File input/output.
+#include <unordered_map>///< Hash table-based associative container.
 
 #include <Memory/TSharedPointer.h>
 #include <Memory/TStaticPtr.h>
 #include <Memory/TUniquePtr.h>
 
+#include <imgui.h>
+#include <imgui-SFML.h>
+
 // === Third Party Libraries ===
 #include <SFML/Graphics.hpp> ///< SFML graphics module.
 
 // === ImGui ===
-// Add ImGui headers here if used in the future.
+// Add ImGui headers here if used in the future
 
 // === Macros ===
 
@@ -58,7 +61,7 @@
 {                                                                 \
     std::ostringstream os_;                                       \
     os_ << "ERROR : " << classObj << "::" << method << " : "      \
-        << "  Error in received data [" << errorMSG << "] \n";    \
+        << "  Error in data from params [" << errorMSG"] \n";     \
     std::cerr << os_.str();                                       \
     exit(1);                                                      \
 }
@@ -69,10 +72,11 @@
     * @enum ShapeType
     * @brief Types of shapes that can be created in the system.
     */
-enum ShapeType {
-    EMPTY = 0,     ///< No shape.
-    CIRCLE = 1,    ///< Circle shape.
-    RECTANGLE = 2, ///< Rectangle shape.
-    TRIANGLE = 3,  ///< Triangle using a convex polygon.
-    POLYGON = 4    ///< General polygon with 5 or more points.
+enum
+    ShapeType {
+    EMPTY = 0,    ///< No shape.
+    CIRCLE = 1,   ///< Circle shape.
+    RECTANGLE = 2,///< Rectangle shape.
+    TRIANGLE = 3, ///< Triangle shape using a convex polygon.
+    POLYGON = 4   ///< General polygon with 5 or more points.
 };
