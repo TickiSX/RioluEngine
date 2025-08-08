@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ECS">
+      <UniqueIdentifier>{474e099c-fe05-4cd1-be8a-80a3061fb331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{19d575d2-c2e7-40b5-9349-503155a9dd05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{1c1c62a2-83f5-4123-a56f-20751089b344}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RioluEngine\include\BaseApp.h">
@@ -27,64 +36,124 @@
     <ClInclude Include="RioluEngine\include\Window.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="RioluEngine\include\ECS\Actor.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="RioluEngine\include\ECS\Component.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="RioluEngine\include\ECS\Entity.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="RioluEngine\include\ECS\Transform.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="RioluEngine\include\Memory\TSharedPointer.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="RioluEngine\include\Memory\TStaticPtr.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="RioluEngine\include\Memory\TUniquePtr.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="RioluEngine\include\Memory\TWeakPointer.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="RioluEngine\include\Utilities\Vector2.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="RioluEngine\include\ResourceManager.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="RioluEngine\include\ECS\Actor.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="RioluEngine\include\ECS\Component.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="RioluEngine\include\ECS\Entity.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
     <ClInclude Include="RioluEngine\include\ECS\Texture.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="RioluEngine\include\ECS\Transform.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="RioluEngine\include\Utilities\Vector2.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParties\imgui-master\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParties\imgui-master\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParties\imgui-master\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParties\imgui-master\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParties\imgui-master\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParties\imgui-sfml-master\imconfig-SFML.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParties\imgui-sfml-master\imgui-SFML.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParties\imgui-sfml-master\imgui-SFML_export.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParties\imgui-sfml-master\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="RioluEngine\include\Memory\TSharedPointer.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="RioluEngine\include\Memory\TStaticPtr.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="RioluEngine\include\Memory\TUniquePtr.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="RioluEngine\include\Memory\TWeakPointer.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="A_Racer.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineGUI.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RioluEngine\include\ECS\Transform.cpp">
-      <Filter>Archivos de encabezado</Filter>
+    <ClCompile Include="RioluEngine\src\ECS\Actor.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="RioluEngine\src\BaseApp.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="RioluEngine\src\CShape.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="RioluEngine\src\Transform.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="RioluEngine\src\Window.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="RioluEngine\src\main.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="RioluEngine\src\ECS\Actor.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="RioluEngine\src\ResourceManager.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="RioluEngine\src\Transform.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="RioluEngine\src\Window.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="A_Racer.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineGUI.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParties\imgui-master\imgui_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParties\imgui-master\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParties\imgui-master\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParties\imgui-master\imgui_tables.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParties\imgui-master\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParties\imgui-sfml-master\imgui-SFML.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="RioluEngine\include\ECS\Transform.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

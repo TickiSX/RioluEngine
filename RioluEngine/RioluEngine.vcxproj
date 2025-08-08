@@ -141,6 +141,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="A_Racer.h" />
+    <ClInclude Include="EngineGUI.h" />
     <ClInclude Include="RioluEngine\include\BaseApp.h" />
     <ClInclude Include="RioluEngine\include\CShape.h" />
     <ClInclude Include="RioluEngine\include\ECS\Actor.h" />
@@ -156,8 +158,19 @@
     <ClInclude Include="RioluEngine\include\ResourceManager.h" />
     <ClInclude Include="RioluEngine\include\Utilities\Vector2.h" />
     <ClInclude Include="RioluEngine\include\Window.h" />
+    <ClInclude Include="ThirdParties\imgui-master\imgui.h" />
+    <ClInclude Include="ThirdParties\imgui-master\imgui_internal.h" />
+    <ClInclude Include="ThirdParties\imgui-master\imstb_rectpack.h" />
+    <ClInclude Include="ThirdParties\imgui-master\imstb_textedit.h" />
+    <ClInclude Include="ThirdParties\imgui-master\imstb_truetype.h" />
+    <ClInclude Include="ThirdParties\imgui-sfml-master\imconfig-SFML.h" />
+    <ClInclude Include="ThirdParties\imgui-sfml-master\imconfig.h" />
+    <ClInclude Include="ThirdParties\imgui-sfml-master\imgui-SFML.h" />
+    <ClInclude Include="ThirdParties\imgui-sfml-master\imgui-SFML_export.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="A_Racer.cpp" />
+    <ClCompile Include="EngineGUI.cpp" />
     <ClCompile Include="RioluEngine\include\ECS\Transform.cpp" />
     <ClCompile Include="RioluEngine\src\BaseApp.cpp" />
     <ClCompile Include="RioluEngine\src\CShape.cpp" />
@@ -166,6 +179,13 @@
     <ClCompile Include="RioluEngine\src\ResourceManager.cpp" />
     <ClCompile Include="RioluEngine\src\Transform.cpp" />
     <ClCompile Include="RioluEngine\src\Window.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="ThirdParties\imgui-master\imgui.cpp" />
+    <ClCompile Include="ThirdParties\imgui-master\imgui_demo.cpp" />
+    <ClCompile Include="ThirdParties\imgui-master\imgui_draw.cpp" />
+    <ClCompile Include="ThirdParties\imgui-master\imgui_tables.cpp" />
+    <ClCompile Include="ThirdParties\imgui-master\imgui_widgets.cpp" />
+    <ClCompile Include="ThirdParties\imgui-sfml-master\imgui-SFML.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
